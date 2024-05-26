@@ -28,8 +28,8 @@ function CustomerList() {
     };
 
     return (
-        <div className="col">
-            <h1>Customers</h1>
+        <div className="col mt-5">
+            <h1 className="text-center">Customers</h1>
             <Link to="/add" className="btn btn-primary">
                 Add new
             </Link>
@@ -39,9 +39,9 @@ function CustomerList() {
             ) : error ? (
                 error
             ) : (
-                <table className="table">
+                <table className="table table-light table-hover mt-3">
                     <thead>
-                        <tr>
+                        <tr className="table-dark">
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
