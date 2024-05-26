@@ -1,10 +1,10 @@
-import CustomerList from "./CustomerList";
+import { Outlet } from "react-router-dom";
 
 function App() {
     return (
         <div className="container">
             <div className="row">
-                <CustomerList />
+                <Outlet />
             </div>
         </div>
     );

@@ -7,15 +7,18 @@ import { store } from "./store.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound.jsx";
 import AddCustomer from "./AddCustomer.jsx";
+import CustomerList from "./CustomerList.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<App />} />
-                    <Route path="/add" element={<AddCustomer />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" element={<App />}>
+                        <Route index element={<CustomerList />} />
+                        <Route path="/add" element={<AddCustomer />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </Provider>

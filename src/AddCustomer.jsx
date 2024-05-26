@@ -7,7 +7,7 @@ function AddCustomer() {
     const [subscribed, setSubscribed] = useState(false);
 
     return (
-        <div className="col">
+        <div className="col-6 mx-auto mt-5 ">
             <h1>Add Customer</h1>
 
             <form>
@@ -54,6 +54,7 @@ function AddCustomer() {
                         onChange={(e) => setSubscribed(e.target.checked)}
                     />
                 </div>
+                <button className="btn btn-primary">Add</button>
             </form>
         </div>
     );
