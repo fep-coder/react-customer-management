@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAddCustomerMutation } from "./slices/customersApiSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function AddCustomer() {
     const [id, setId] = useState("");
@@ -16,9 +17,11 @@ function AddCustomer() {
         e.preventDefault();
         try {
             await addCustomer({ id, name, email, subscribed });
+            toast.success("Customer added successfully");
             navigate("/");
         } catch (error) {
             console.log(error);
+            toast.error("Failed to add customer");
         }
     };
 
