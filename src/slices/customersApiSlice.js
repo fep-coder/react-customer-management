@@ -5,6 +5,7 @@ const customersApiSlice = apiSlice.injectEndpoints({
         // get /customers
         getCustomers: builder.query({
             query: () => "/customers",
+            providesTags: ["Customers"],
         }),
 
         // post /customers
@@ -14,6 +15,7 @@ const customersApiSlice = apiSlice.injectEndpoints({
                 method: "POST",
                 body: customer,
             }),
+            invalidatesTags: ["Customers"],
         }),
     }),
 });

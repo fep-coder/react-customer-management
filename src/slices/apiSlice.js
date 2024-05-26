@@ -8,4 +8,6 @@ export const apiSlice = createApi({
     baseQuery,
     tagTypes: ["Customers"],
     endpoints: () => ({}),
+    // keepUnusedDataFor: 5,
+    // refetchOnMountOrArgChange: true,
 });

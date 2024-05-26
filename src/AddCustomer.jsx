@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAddCustomerMutation } from "./slices/customersApiSlice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AddCustomer() {
     const [id, setId] = useState("");
@@ -71,6 +71,9 @@ function AddCustomer() {
                     />
                 </div>
                 <button className="btn btn-primary">Add</button>
+                <Link to="/" className="btn btn-secondary ms-2">
+                    Back to List
+                </Link>
             </form>
         </div>
     );

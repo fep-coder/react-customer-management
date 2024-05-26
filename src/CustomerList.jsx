@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useGetCustomersQuery } from "./slices/customersApiSlice";
 
 function CustomerList() {
-    const { data, isLoading, error } = useGetCustomersQuery();
+    const { data: customers, isLoading, error } = useGetCustomersQuery();
 
     return (
         <div className="col">
@@ -27,7 +27,7 @@ function CustomerList() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((customer) => (
+                        {customers.map((customer) => (
                             <tr key={customer.id}>
                                 <td>{customer.id}</td>
                                 <td>{customer.name}</td>
