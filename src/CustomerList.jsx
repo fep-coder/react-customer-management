@@ -34,8 +34,10 @@ function CustomerList() {
                                 <td>{customer.email}</td>
                                 <td>{customer.subscribed ? "Yes" : "No"}</td>
                                 <td>
-                                    <a href="#">Edit</a> |{" "}
-                                    <a href="#">Delete</a>
+                                    <Link to={`/edit/${customer.id}`}>
+                                        Edit
+                                    </Link>{" "}
+                                    | <a href="#">Delete</a>
                                 </td>
                             </tr>
                         ))}
