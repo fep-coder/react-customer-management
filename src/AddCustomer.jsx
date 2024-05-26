@@ -38,7 +38,7 @@ function AddCustomer() {
                         className="form-control"
                         id="id"
                         value={id}
-                        onChange={(e) => setId(parseInt(e.target.value))}
+                        onChange={(e) => setId(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
