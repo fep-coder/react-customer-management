@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useGetCustomersQuery } from "./slices/customersApiSlice";
 
 function CustomerList() {
@@ -6,9 +7,9 @@ function CustomerList() {
     return (
         <div className="col">
             <h1>Customers</h1>
-            <a href="#" className="btn btn-primary">
+            <Link to="/add" className="btn btn-primary">
                 Add new
-            </a>
+            </Link>
 
             {isLoading ? (
                 <p>Loading...</p>
