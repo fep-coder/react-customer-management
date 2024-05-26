@@ -17,30 +17,6 @@
       "name": "Bob Builder",
       "email": "bob@gmail.com",
       "subscribed": false
-    },
-    {
-      "id": "4",
-      "name": "Jill",
-      "email": "jill@gmail.com",
-      "subscribed": true
-    },
-    {
-      "id": "5",
-      "name": "john",
-      "email": "john@gmail.com",
-      "subscribed": true
-    },
-    {
-      "id": "77",
-      "name": "Mike 2",
-      "email": "mike@gmail.com",
-      "subscribed": true
-    },
-    {
-      "id": "8",
-      "name": "Jane",
-      "email": "test",
-      "subscribed": false
     }
   ]
 }

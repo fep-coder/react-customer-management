@@ -1,8 +1,31 @@
 import { Link } from "react-router-dom";
-import { useGetCustomersQuery } from "./slices/customersApiSlice";
+import {
+    useDeleteCustomerMutation,
+    useGetCustomersQuery,
+} from "./slices/customersApiSlice";
+import { toast } from "react-toastify";
 
 function CustomerList() {
-    const { data: customers, isLoading, error } = useGetCustomersQuery();
+    const {
+        data: customers,
+        refetch,
+        isLoading,
+        error,
+    } = useGetCustomersQuery();
+    const [deleteCustomer] = useDeleteCustomerMutation();
+
+    const handleDelete = async (id) => {
+        if (window.confirm("Are you sure?")) {
+            try {
+                await deleteCustomer(id);
+                refetch();
+                toast.success("Customer deleted successfully");
+            } catch (error) {
+                toast.error("Failed to delete customer");
+                console.log(error);
+            }
+        }
+    };
 
     return (
         <div className="col">
@@ -34,10 +57,20 @@ function CustomerList() {
                                 <td>{customer.email}</td>
                                 <td>{customer.subscribed ? "Yes" : "No"}</td>
                                 <td>
-                                    <Link to={`/edit/${customer.id}`}>
+                                    <Link
+                                        className="btn btn-sm btn-primary"
+                                        to={`/edit/${customer.id}`}
+                                    >
                                         Edit
                                     </Link>{" "}
-                                    | <a href="#">Delete</a>
+                                    <button
+                                        onClick={() =>
+                                            handleDelete(customer.id)
+                                        }
+                                        className="btn btn-sm btn-danger"
+                                    >
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         ))}
