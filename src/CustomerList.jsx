@@ -12,7 +12,7 @@ function CustomerList() {
             </Link>
 
             {isLoading ? (
-                <p>Loading...</p>
+                <p>Loading customer list...</p>
             ) : error ? (
                 error
             ) : (

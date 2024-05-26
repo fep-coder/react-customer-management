@@ -48,14 +48,14 @@ function EditCustomer() {
 
     return (
         <div className="col-6 mx-auto mt-5 ">
+            <h1>Edit Customer</h1>
+            {loadingUpdate && <p>LoadingUpdate...</p>}
             {isLoading ? (
-                <p>Loading...</p>
+                <p>Loading customer...</p>
             ) : error ? (
                 <p>{error}</p>
             ) : (
                 <>
-                    <h1>Edit Customer</h1>
-
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="id" className="form-label">
