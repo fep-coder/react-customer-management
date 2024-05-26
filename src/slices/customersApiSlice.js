@@ -6,7 +6,17 @@ const customersApiSlice = apiSlice.injectEndpoints({
         getCustomers: builder.query({
             query: () => "/customers",
         }),
+
+        // post /customers
+        addCustomer: builder.mutation({
+            query: (customer) => ({
+                url: "/customers",
+                method: "POST",
+                body: customer,
+            }),
+        }),
     }),
 });
 
-export const { useGetCustomersQuery } = customersApiSlice;
+export const { useGetCustomersQuery, useAddCustomerMutation } =
+    customersApiSlice;

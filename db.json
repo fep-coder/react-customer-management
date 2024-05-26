@@ -1,22 +1,34 @@
 {
-    "customers": [
-        {
-            "id": 1,
-            "name": "John Doe",
-            "email": "john@gmail.com",
-            "subscribed": true
-        },
-        {
-            "id": 2,
-            "name": "Mary Poppins",
-            "email": "mary@gmail.com",
-            "subscribed": false
-        },
-        {
-            "id": 3,
-            "name": "Bob Builder",
-            "email": "bob@gmail.com",
-            "subscribed": false
-        }
-    ]
+  "customers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "subscribed": true
+    },
+    {
+      "id": "2",
+      "name": "Mary Poppins",
+      "email": "mary@gmail.com",
+      "subscribed": false
+    },
+    {
+      "id": "3",
+      "name": "Bob Builder",
+      "email": "bob@gmail.com",
+      "subscribed": false
+    },
+    {
+      "id": 5,
+      "name": "Jill",
+      "email": "jill@gmail.com",
+      "subscribed": false
+    },
+    {
+      "id": 6,
+      "name": "John",
+      "email": "john@gmail.com",
+      "subscribed": true
+    }
+  ]
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAddCustomerMutation } from "./slices/customersApiSlice";
+import { useNavigate } from "react-router-dom";
 
 function AddCustomer() {
     const [id, setId] = useState("");
@@ -6,11 +8,25 @@ function AddCustomer() {
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
 
+    const navigate = useNavigate();
+
+    const [addCustomer] = useAddCustomerMutation();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await addCustomer({ id, name, email, subscribed });
+            navigate("/");
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className="col-6 mx-auto mt-5 ">
             <h1>Add Customer</h1>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="id" className="form-label">
                         ID
